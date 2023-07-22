@@ -11,20 +11,14 @@ blocking = false
 
 ---------------------------------------------------------------
 
-cmds["respawn"] = function(args, p)
-  origin_spot = player.Character.HumanoidRootPart.CFrame
-  player.Character.Humanoid.Health = 0
-  wait(7.5)
-  player.Character.HumanoidRootPart.CFrame = origin_spot
- end
-
 cmds["freeze"] = function(args, p)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] frozen!","All")
     player.Character.HumanoidRootPart.Anchored = not player.Character.HumanoidRootPart.Anchored
 end
 
 cmds["chat"] = function(args, p)
   if(args[1] == "" or args[1] == nil) then
-     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Agony ON TOP!","All")
+     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("fajka's dhc on top","All")
   else
      local str = ""
      for i = 1,50 do
@@ -37,9 +31,9 @@ end
 
 cmds["tp"] = function(args, p)
   if(args[1] == "" or args[1] == nil) then
-     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Please input place to teleport to.","All")
+     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Please input place to teleport to.","All")
   else
-       game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Teleporting to '" .. args[1] .. "'!","All")
+       game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Teleporting to '" .. args[1] .. "'!","All")
        if(string.lower(args[1]) == "bank") then player.Character.HumanoidRootPart.CFrame = CFrame.new(-437.125885, 38.9783134, -285.587372, 0.0165725499, 5.298579e-08, -0.99986279, 1.16139711e-08, 1, 5.31855591e-08, 0.99986279, -1.24937944e-08, 0.0165725499) end
        if(string.lower(args[1]) == "admin") then player.Character.HumanoidRootPart.CFrame = CFrame.new(-796.256897, -39.6492004, -886.306152, -0.39699012, 2.91068263e-05, 0.917822897, 1.63490836e-06, 1, -3.10057476e-05, -0.917822897, -1.08084187e-05, -0.39699012) end
        if(string.lower(args[1]) == "lava") then player.Character.HumanoidRootPart.CFrame = CFrame.new(-796.256897, -39.6492004, -886.306152, -0.39699012, 2.91068263e-05, 0.917822897, 1.63490836e-06, 1, -3.10057476e-05, -0.917822897, -1.08084187e-05, -0.39699012) end
@@ -52,9 +46,9 @@ end
 
 cmds["tpf"] = function(args, p)
     if(args[1] == "" or args[1] == nil) then
-     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Please input place to teleport to.","All")
+     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Please input place to teleport to.","All")
   else
-       game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Teleporting to '" .. args[1] .. "'!","All")
+       game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Teleporting to '" .. args[1] .. "'!","All")
        if(string.lower(args[1]) == "bank") then player.Character.HumanoidRootPart.CFrame = CFrame.new(-437.125885, 38.9783134, -285.587372, 0.0165725499, 5.298579e-08, -0.99986279, 1.16139711e-08, 1, 5.31855591e-08, 0.99986279, -1.24937944e-08, 0.0165725499) end
        if(string.lower(args[1]) == "admin") then player.Character.HumanoidRootPart.CFrame = CFrame.new(-796.256897, -39.6492004, -886.306152, -0.39699012, 2.91068263e-05, 0.917822897, 1.63490836e-06, 1, -3.10057476e-05, -0.917822897, -1.08084187e-05, -0.39699012) end
        if(string.lower(args[1]) == "lava") then player.Character.HumanoidRootPart.CFrame = CFrame.new(-796.256897, -39.6492004, -886.306152, -0.39699012, 2.91068263e-05, 0.917822897, 1.63490836e-06, 1, -3.10057476e-05, -0.917822897, -1.08084187e-05, -0.39699012) end
@@ -68,7 +62,7 @@ cmds["tpf"] = function(args, p)
 end
 
 cmds["start"] = function(args, p)
-  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Started Dropping!","All")
+  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Started Dropping!","All")
   dropping = true
   repeat
     game.ReplicatedStorage.MainEvent:FireServer("DropMoney", 10000)
@@ -78,7 +72,7 @@ end
 
 cmds["stop"] = function(args, p)
   dropping = false
-  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Stopped dropping!","All")
+  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Stopped dropping!","All")
 end
 
 cmds["goto"] = function(args, p)
@@ -86,7 +80,7 @@ cmds["goto"] = function(args, p)
     player.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild(p.Name).HumanoidRootPart.CFrame
   else
     if(game.Workspace:FindFirstChild(args[1]) == nil) then
-      game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Character doesnt exist.","All")
+      game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[FAJKA] Character doesnt exist.","All")
     else
       player.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild(args[1]).HumanoidRootPart.CFrame
     end
@@ -108,13 +102,6 @@ cmds["wallet"] = function(args, p)
     game.Players.LocalPlayer.Character.Humanoid:UnequipTools(game.Players.LocalPlayer.Character:FindFirstChild("Wallet"))
     wallet = false
   end
-end
-
-cmds["crash"] = function(args, p)
-  --loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/scripts/Crasher.lua"))()
-  -- custom crash soon to come
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/BetterDaHood/BetterDaHoodCrasher/main/Crash'))()
-  -- betterdahood crasher on top
 end
 
   local testsquadAIR    = {
